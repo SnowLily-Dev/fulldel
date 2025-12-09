@@ -12,10 +12,12 @@ fi
 # Yay! You have root! Let's send this motherf---er to /usr/bin!
 echo Installing fulldel to /usr/bin...
 echo "Side note: this is totally not a super basic cp or smth nah"
+echo " "
 cp $PWD/fulldel.sh /usr/bin/fulldel
 
 # More goofy dialogue :3
 echo "Setting exec permissions for your executive pleasure :3..."
+echo " "
 chmod +x /usr/bin/fulldel
 
 echo "It would seem fulldel is installed..."
