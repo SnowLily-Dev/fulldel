@@ -1,18 +1,25 @@
-#!/bin/sh
+#!/bin/bash
+
+v="0.66.6c"
 
 #Beautiful, simply astounding, turn of the millenium, futuristic, perfect error handling :D
 set -e
 
 #Update all of the age-old spaghetti code cuz I'm no Italian XD
 #PS It's a JOKE OKAY GET THE MAFIA AWAY FROM MY DOORSTEP D:
-if [[ -z "$#" ]];
+if [[ -z "$#" || "$1" = "--help" || "$1" = "-h" ]];
 then
-	echo $0": E: No flag specified!"
-	exit;
-fi
+        echo $0":"
+	echo "Version: "$v
+	echo " "
+        echo "Script for removing a package and clearing"
+        echo "cache with one easy command."
+        echo " "
+        echo "Usage:"
+        echo $0" [-h] [--help] [-n] [--no-package] [-p <packages>]"
 
 #More un-spaghettification
-if [[ $1 = "--no-package" || "$1" = "-n" ]];
+elif [[ $1 = "--no-package" || "$1" = "-n" ]];
 then
 	echo "--no-package flag active!"
 	echo $0":" "will only clear apt package cache and execute apt autoremove!"
@@ -22,15 +29,6 @@ then
 	sudo rm -rf /var/cache/apt/*
 	echo $0":" "Finished!"
  
-elif [[ "$1" = "--help" || "$1" = "-h" ]];
-then
-	echo $0":"
-	echo "Script for removing a package and clearing"
-	echo "cache with one easy command."
-	echo " "
-	echo "Usage:"
-	echo $0" [-h] [--help] [-n] [--no-package] [-p <packages>]"
-
 # Because we might as well multitask :)
 elif [[ "$1" = "-p" ]];
 then

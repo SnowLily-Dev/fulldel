@@ -1,5 +1,6 @@
 # fulldel
 UPDATE 09/12/2025: Bored outta my mind, decided to look back at this and clean up a bit with fresher knowledge lol
+20:32 I'm a freaking idiot, check CHANGELOG.md lol
 
 fulldel(A.K.A. Full Delete) is a script made for easily removing packages with the apt package manager and directly
 removing the apt cache and unnecessary dependencies of recently removed packages.
@@ -12,26 +13,11 @@ Syntax for removing only the dependencies of recently removed apps/unused packag
 removing packages:
 
 Code:
-fulldel -n
+`fulldel -n`
 OR
-fulldel --no-package
-
-Installation:
-
-NOTE: Do NOT extract fulldel to /usr/bin or any other system folder or it will break your system!
-Make sure to keep fulldel.tar.xz somewhere in your home folder and use the "install script" within
-the archive to install fulldel!
+`fulldel --no-package`
 
 Code:
-
-mkdir ~/Documents/fulldel
-
-cp /path/to/fulldel.tar.xz ~/Documents/fulldel
-
-cd ~/Documents/fulldel
-
-tar -xf ./fulldel.tar.xz
-
-chmod 775 ./install
-
-./install
+`git clone https://github.com/SnowLily-Dev/fulldel`
+`cd fulldel`
+`sudo install.sh`

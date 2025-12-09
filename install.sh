@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Ooh, funky error auto-halting :3
 set -e
