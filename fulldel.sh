@@ -1,27 +1,27 @@
-if [[ "$1" != "--no-package" && "$1" != "-n" && "$1" != "-h" && "$1" != "--help" && "$1" != "-p" ]];
+#!/bin/sh
+
+#Beautiful, simply astounding, turn of the millenium, futuristic, perfect error handling :D
+set -e
+
+#Update all of the age-old spaghetti code cuz I'm no Italian XD
+#PS It's a JOKE OKAY GET THE MAFIA AWAY FROM MY DOORSTEP D:
+if [[ -z "$#" ]];
 then
-	echo $0": E: Unknown flag or no flag specified!"
-	exit
-elif [[ $1 = "--no-package" ]];
+	echo $0": E: No flag specified!"
+	exit;
+fi
+
+#More un-spaghettification
+if [[ $1 = "--no-package" || "$1" = "-n" ]];
 then
 	echo "--no-package flag active!"
-	echo $0 "will only clear apt package cache and execute apt autoremove!"
+	echo $0":" "will only clear apt package cache and execute apt autoremove!"
 	sudo apt autoremove
 	sudo apt autoclean
 	sudo apt clean
 	sudo rm -rf /var/cache/apt/*
-	echo $0": Finished!"
-
-elif [[ "$1" = "-n" ]];
-then
-        echo "-n flag active!"
-        echo "Will only clear cache and execute apt autoremove!"
-        sudo apt autoremove
-        sudo apt autoclean
-        sudo apt clean
-        sudo rm -rf /var/cache/apt/*
-        echo $0": Finished!"
-
+	echo $0":" "Finished!"
+ 
 elif [[ "$1" = "--help" || "$1" = "-h" ]];
 then
 	echo $0":"
@@ -30,12 +30,14 @@ then
 	echo " "
 	echo "Usage:"
 	echo $0" [-h] [--help] [-n] [--no-package] [-p <packages>]"
+
+# Because we might as well multitask :)
 elif [[ "$1" = "-p" ]];
 then
 if [[ -z "$2" ]];
 then
 	echo "E: -p: No packages were specified!"
-	exit
+	exit;
 else
         echo "Removing" ${@:2}"..."
         sudo apt -y purge ${@:2}

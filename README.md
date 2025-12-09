@@ -1,4 +1,6 @@
 # fulldel
+UPDATE 09/12/2025: Bored outta my mind, decided to look back at this and clean up a bit with fresher knowledge lol
+
 fulldel(A.K.A. Full Delete) is a script made for easily removing packages with the apt package manager and directly
 removing the apt cache and unnecessary dependencies of recently removed packages.
 Syntax for removing a package, it's dependencies and the apt cache:
