@@ -18,6 +18,9 @@ OR
 `fulldel --no-package`
 
 Code:
+
 `git clone https://github.com/SnowLily-Dev/fulldel`
+
 `cd fulldel`
+
 `sudo install.sh`
