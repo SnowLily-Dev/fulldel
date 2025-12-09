@@ -7,7 +7,7 @@ set -e
 
 #Update all of the age-old spaghetti code cuz I'm no Italian XD
 #PS It's a JOKE OKAY GET THE MAFIA AWAY FROM MY DOORSTEP D:
-if [[ -z "$#" || "$1" = "--help" || "$1" = "-h" ]];
+if [[ -z "$1" || "$1" = "--help" || "$1" = "-h" ]];
 then
         echo $0":"
 	echo "Version: "$v
